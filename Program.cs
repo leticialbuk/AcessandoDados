@@ -6,7 +6,7 @@ namespace AcessandoDados
     {
         static void Main(string[] args)
         {
-            const string connectionString = "Server=localhost,1433;Database=base;User Id=sa;";
+            const string connectionString = "Server=localhost,1433;Database=balta;User Id=sa;Passaword=1q2w3e4r@#";
 
             using (var connection = new SqlConnection(connectionString))
             {
@@ -25,6 +25,8 @@ namespace AcessandoDados
                         Console.WriteLine($"{reader.GetGuid(0)} - {reader.GetString(1)}");
                     }
                 }
+
+                Console.WriteLine("Testando");
             }
         }
     }
