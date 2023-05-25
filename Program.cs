@@ -6,7 +6,7 @@ namespace AcessandoDados
     {
         static void Main(string[] args)
         {
-            const string connectionString = "Server=localhost,1433;Database=balta;User Id=sa;Passaword=1q2w3e4r@#";
+            const string connectionString = @"Server=localhost\SQLEXPRESS;Database=balta;Trusted_Connection=True;TrustServerCertificate=True";
 
             using (var connection = new SqlConnection(connectionString))
             {
