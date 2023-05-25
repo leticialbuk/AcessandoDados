@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "cpEq6SCpZmAexdCe7OSEdoLnCnU3mHjS0P4XJUcFavyiyEfVcMPK/F8phaF2saZNsrzpHfc0n1i/CY8xvFiVvg==",
+  "dgSpecHash": "w5gsx5AzSOGJlTvZ0FEV+NCsCH6615lSusGClYIiMahcGQp4EBhrwCSlcKv53lh6J1h89Sl5ogy34GdXYmEznw==",
   "success": true,
   "projectFilePath": "C:\\Dev\\AcessandoDados\\AcessandoDados.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\letic\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\letic\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\letic\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\letic\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\letic\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\letic\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.1\\microsoft.data.sqlclient.5.1.1.nupkg.sha512",
