@@ -25,8 +25,6 @@ namespace AcessandoDados
                         Console.WriteLine($"{reader.GetGuid(0)} - {reader.GetString(1)}");
                     }
                 }
-
-                Console.WriteLine("Testando");
             }
         }
     }
