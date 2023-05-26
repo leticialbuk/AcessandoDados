@@ -1,4 +1,6 @@
 ﻿using System;
+using BaltaDataAcess.Models;
+using Dapper;
 using Microsoft.Data.SqlClient;
 namespace AcessandoDados
 {
@@ -10,7 +12,11 @@ namespace AcessandoDados
 
             using (var connection = new SqlConnection(connectionString))
             {
-
+                var categories = connection.Query<Category>("SELECT [Id], [Title] FROM Category");
+                foreach (var category in categories)
+                {
+                    Console.WriteLine($"{category.Id} - {category.Title}");
+                }
             }
 
             Console.WriteLine("Conexão completa");

@@ -48,3 +48,4 @@ C:\Dev\AcessandoDados\obj\Debug\net7.0\refint\AcessandoDados.dll
 C:\Dev\AcessandoDados\obj\Debug\net7.0\AcessandoDados.pdb
 C:\Dev\AcessandoDados\obj\Debug\net7.0\AcessandoDados.genruntimeconfig.cache
 C:\Dev\AcessandoDados\obj\Debug\net7.0\ref\AcessandoDados.dll
+C:\Dev\AcessandoDados\bin\Debug\net7.0\Dapper.dll
