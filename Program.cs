@@ -14,7 +14,8 @@ namespace AcessandoDados
             {
                 //CreateManyCategory(connection);
                 //UpdateCategory(connection);
-                ListCategories(connection);
+                //ListCategories(connection);
+                ExecuteProcedure(connection);
             }
         }
 
@@ -130,6 +131,16 @@ namespace AcessandoDados
 
             Console.WriteLine($"{rows} linhas inseridas");
         }
+        static void ExecuteProcedure(SqlConnection connection)
+        {
+            var procedure = "[spDeleteStudent]";
+            var pars = new { StudentId = "f525e728-99b8-4e57-9f59-9a086d22b881" };
+            var affectedRows = connection.Execute(
+                procedure,
+                pars,
+                commandType: System.Data.CommandType.StoredProcedure);
 
+            Console.WriteLine($"{affectedRows} linhas afetadas");
+        }
     }
 }
