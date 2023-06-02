@@ -15,7 +15,8 @@ namespace AcessandoDados
                 //CreateManyCategory(connection);
                 //UpdateCategory(connection);
                 //ListCategories(connection);
-                ExecuteProcedure(connection);
+                //ExecuteProcedure(connection);
+                ExecuteReadProcedure(connection);
             }
         }
 
@@ -131,16 +132,19 @@ namespace AcessandoDados
 
             Console.WriteLine($"{rows} linhas inseridas");
         }
-        static void ExecuteProcedure(SqlConnection connection)
+        static void ExecuteReadProcedure(SqlConnection connection)
         {
-            var procedure = "[spDeleteStudent]";
-            var pars = new { StudentId = "f525e728-99b8-4e57-9f59-9a086d22b881" };
-            var affectedRows = connection.Execute(
+            var procedure = "[spGetCoursesByCategory]";
+            var pars = new { CategoryId = "09ce0b7b-cfca-497b-92c0-3290ad9d5142" };
+            var courses = connection.Query(
                 procedure,
                 pars,
                 commandType: System.Data.CommandType.StoredProcedure);
 
-            Console.WriteLine($"{affectedRows} linhas afetadas");
+            foreach (var item in courses)
+            {
+                Console.WriteLine(item.Title);
+            }
         }
     }
 }
