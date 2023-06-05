@@ -21,7 +21,6 @@ namespace AcessandoDados
                 ReadView(connection);
             }
         }
-
         static void ListCategories(SqlConnection connection)
         {
             var categories = connection.Query<Category>("SELECT [Id], [Title] FROM Category");
@@ -30,7 +29,6 @@ namespace AcessandoDados
                 Console.WriteLine($"{item.Id} - {item.Title}");
             }
         }
-
         static void CreateCategory(SqlConnection connection)
         {
             var category = new Category();
@@ -65,7 +63,6 @@ namespace AcessandoDados
             });
             Console.WriteLine($"{rows} linhas inseridas");
         }
-
         static void UpdateCategory(SqlConnection connection)
         {
             var updateQuery = "UPDATE [Category] SET [Title]=@title WHERE [Id]=@id";
@@ -189,6 +186,29 @@ namespace AcessandoDados
             foreach (var item in couses)
             {
                 Console.WriteLine($"{item.Id} - {item.Title}");
+            }
+        }
+        static void OneToOne(SqlConnection connection)
+        {
+            var sql = @"
+                SELECT 
+                    * 
+                FROM 
+                    [CareerItem] 
+                INNER JOIN 
+                    [Course] ON [CareerItem].[CourseId] = [Course].[Id]";
+
+            var items = connection.Query<CareerItem, Course, CareerItem>(
+                sql,
+                (careerItem, course) =>
+                {
+                    careerItem.Course = course;
+                    return careerItem;
+                }, splitOn: "Id");
+
+            foreach (var item in items)
+            {
+                Console.WriteLine($"{item.Title} - Curso: {item.Course.Title}");
             }
         }
 
