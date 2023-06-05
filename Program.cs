@@ -17,7 +17,8 @@ namespace AcessandoDados
                 //ListCategories(connection);
                 //ExecuteProcedure(connection);
                 //ExecuteReadProcedure(connection);
-                ExecuteScalar(connection);
+                //ExecuteScalar(connection);
+                ReadView(connection);
             }
         }
 
@@ -179,6 +180,16 @@ namespace AcessandoDados
                 category.Featured
             });
             Console.WriteLine($"A categoria inserida foi: {id}");
+        }
+        static void ReadView(SqlConnection connection)
+        {
+            var sql = "SELECT * FROM [vwCourses]";
+            var couses = connection.Query(sql);
+
+            foreach (var item in couses)
+            {
+                Console.WriteLine($"{item.Id} - {item.Title}");
+            }
         }
 
     }
