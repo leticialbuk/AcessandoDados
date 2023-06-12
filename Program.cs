@@ -352,6 +352,8 @@ namespace AcessandoDados
                 transaction.Rollback();
                 Console.WriteLine($"{rows} linhas inseridas");
             }
+
+            Console.WriteLine("Testando");
         }
     }
 }
